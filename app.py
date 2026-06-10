@@ -3,13 +3,15 @@
 
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
+from dotenv import load_dotenv
+import os
 
 # Setting up Flask app
 app = Flask(__name__)
 
 # Setting up Groq client
 # Get your free API key at console.groq.com
-import os
+load_dotenv()
 api_key = os.environ.get("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 
